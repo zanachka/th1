@@ -1,0 +1,67 @@
+IPv4: listen 0.0.0.0:8443
+IPv6: listen :::8443
+[ALPN] client offers:
+ * h2
+ * http/1.1
+[ALPN] client offers:
+ * h2
+ * http/1.1
+[id=1] [  6.232] closed
+[ALPN] client offers:
+ * h2
+ * http/1.1
+[ALPN] client offers:
+ * h2
+ * http/1.1
+The negotiated protocol: h2
+[id=2] [  6.241] send SETTINGS frame <length=6, flags=0x00, stream_id=0>
+          (niv=1)
+          [SETTINGS_MAX_CONCURRENT_STREAMS(0x03):100]
+[id=2] [  6.241] recv SETTINGS frame <length=24, flags=0x00, stream_id=0>
+          (niv=4)
+          [SETTINGS_HEADER_TABLE_SIZE(0x01):65536]
+          [SETTINGS_ENABLE_PUSH(0x02):0]
+          [SETTINGS_INITIAL_WINDOW_SIZE(0x04):6291456]
+          [SETTINGS_MAX_HEADER_LIST_SIZE(0x06):262144]
+[id=2] [  6.242] recv WINDOW_UPDATE frame <length=4, flags=0x00, stream_id=0>
+          (window_size_increment=15663105)
+[id=2] [  6.242] send SETTINGS frame <length=0, flags=0x01, stream_id=0>
+          ; ACK
+          (niv=0)
+[id=2] [  6.243] recv (stream_id=1) :method: GET
+[id=2] [  6.243] recv (stream_id=1) :authority: 192.168.65.4:8443
+[id=2] [  6.243] recv (stream_id=1) :scheme: https
+[id=2] [  6.243] recv (stream_id=1) :path: /
+[id=2] [  6.244] recv (stream_id=1) cache-control: max-age=0
+[id=2] [  6.244] recv (stream_id=1) sec-ch-ua: "Not_A Brand";v="8", "Chromium";v="120", "Google Chrome";v="120"
+[id=2] [  6.244] recv (stream_id=1) sec-ch-ua-mobile: ?0
+[id=2] [  6.245] recv (stream_id=1) sec-ch-ua-platform: "macOS"
+[id=2] [  6.245] recv (stream_id=1) dnt: 1
+[id=2] [  6.245] recv (stream_id=1) upgrade-insecure-requests: 1
+[id=2] [  6.246] recv (stream_id=1) user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+[id=2] [  6.246] recv (stream_id=1) accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+[id=2] [  6.247] recv (stream_id=1) sec-fetch-site: none
+[id=2] [  6.247] recv (stream_id=1) sec-fetch-mode: navigate
+[id=2] [  6.247] recv (stream_id=1) sec-fetch-user: ?1
+[id=2] [  6.248] recv (stream_id=1) sec-fetch-dest: document
+[id=2] [  6.248] recv (stream_id=1) accept-encoding: gzip, deflate, br
+[id=2] [  6.248] recv (stream_id=1) accept-language: en,zh-CN;q=0.9,zh-TW;q=0.8,zh;q=0.7
+[id=2] [  6.249] recv HEADERS frame <length=474, flags=0x25, stream_id=1>
+          ; END_STREAM | END_HEADERS | PRIORITY
+          (padlen=0, dep_stream_id=0, weight=256, exclusive=1)
+          ; Open new stream
+[id=2] [  6.320] send HEADERS frame <length=72, flags=0x04, stream_id=1>
+          ; END_HEADERS
+          (padlen=0)
+          ; First response header
+          :status: 404
+          server: nghttpd nghttp2/1.43.0
+          date: Sun, 17 Dec 2023 13:40:57 GMT
+          content-type: text/html; charset=UTF-8
+          content-length: 147
+[id=2] [  6.320] send DATA frame <length=147, flags=0x01, stream_id=1>
+          ; END_STREAM
+[id=2] [  6.320] stream_id=1 closed
+[id=2] [  6.321] recv SETTINGS frame <length=0, flags=0x01, stream_id=0>
+          ; ACK
+          (niv=0)
